@@ -1,19 +1,17 @@
-# IoT Dashboard Backend - FastAPI
+# IoT Dashboard Frontend - React.js
 
-This is a production-ready FastAPI service that listens to real-time sensor data over MQTT, processes incoming JSON messages, and generates alerts based on predefined thresholds.
+A responsive web application built with React.js to visualize real-time sensor data and system alerts.
 
-Key Features
-* **MQTT Subscription**: Subscribes to 10 MQTT topics (sensor/topic1 to sensor/topic10).
-* **Real-time Processing**: Validates JSON messages containing Temperature, Humidity, Voltage, Current, and Pressure.
-* **Threshold Validation**: Automatically generates alerts if values exceed set limits (e.g., Temp > 50.0°C).
-* **Database Management**: Stores raw sensor data and alert metadata (timestamp, violated keys, actual values) in MySQL.
-* **Containerization**: Fully Dockerized for easy deployment.
+Dashboard Features
+* **Live Overview**: Shows latest sensor readings and a running count of total messages received.
+* **Alerts Page**: Lists all triggered alerts with highlighted violations and timestamps.
+* **Raw Data View**: A tabular view of all historical sensor data.
+* **Responsive Design**: Optimized for Desktop and Tablet viewing.
 
-Tech Stack
-* **Framework**: FastAPI (Python)
-* **Database**: MySQL
-* **Broker**: Mosquitto MQTT
-* **Libraries**: SQLAlchemy (ORM), Paho-MQTT (Listener)
-  
+🛠️ Tech Stack
+* **Core**: React.js
+* **Styling**: Tailwind CSS (for responsiveness)
+* **API Integration**: Axios / Fetch API for backend communication
+
 Hosting Exploration
-As per the task requirements, I explored hosting this backend on **AWS EC2** using Docker Compose. For production-grade MQTT, a managed broker like **HiveMQ** would be used for high availability.
+I explored hosting this frontend on **Vercel**. Vercel provides a global CDN and automatic CI/CD pipelines that would trigger a new build every time code is pushed to this GitHub repository.
